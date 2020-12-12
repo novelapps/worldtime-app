@@ -11,8 +11,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:request-connection host="worldtimeapi.org" />
 	</http:request-config>
 	<flow name="muleappFlow" doc:id="456a2080-160a-4c4e-b677-4853c6e53749" >
-		<http:listener doc:name="Listener" doc:id="6875c4fc-e587-4b9e-be24-61225df22661" config-ref="HTTP_Listener_config" path="/[region]/[city]"/>
-		<http:request method="GET" doc:name="Request" doc:id="c813d44b-f9e9-4a1f-a036-be26a6ba4506" config-ref="HTTP_Request_configuration" path="/[region]/[city]">
+		<http:listener doc:name="Listener" doc:id="6875c4fc-e587-4b9e-be24-61225df22661" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
+		<http:request method="GET" doc:name="Request" doc:id="c813d44b-f9e9-4a1f-a036-be26a6ba4506" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---
 {
